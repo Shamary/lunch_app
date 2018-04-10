@@ -1,27 +1,32 @@
 <div>
+    <div class="row">
+        <button id="signout" class="submit_m offset-md-1">Logout</button>
+    </div>
     <div class = "card">
         <div class="card-header text-white text-center bg-danger">Add To Menu</div>
-        <div class="card-body body_ref">
+        <div class="offset-md-4 card-body body_ref">
             <form action="/admin" method="POST">
                 <div>
                     <div class="row">
-                        <input name="appetizer" type="text" placeholder="Appetizer" required/>
+                        <input class="addTo col-md-3" name="appetizer" type="text" placeholder="Appetizer" maxLength="50" required/>
                     </div>
                     <div class="row">
-                        <input name="protein" type="text" placeholder="Protein" required/>
+                        <input class="addTo col-md-3" name="protein" type="text" placeholder="Protein" maxLength="30" required/>
                     </div>
                     <div class="row">
-                        <input name="carb" type="text" placeholder="Carb" required/>
+                        <input class="addTo col-md-3" name="carb" type="text" placeholder="Carb" maxLength="30" required/>
                     </div>
                     <div class="row">
-                        <input name="vegetable" type="text" placeholder="Vegetable" required/>
+                        <input class="addTo col-md-3" name="vegetable" type="text" placeholder="Vegetable" maxLength="30" required/>
                     </div>
                     <div class="row">
-                        <input name="sides" type="text" placeholder="Sides" required/>
+                        <input class="addTo col-md-3" name="sides" type="text" placeholder="Sides" maxLength="50" required/>
                     </div>
                 </div>
                 <br>
-                <input type="submit" value="Add To Menu"/>
+                <div class="row">
+                    <input class="submit_m" type="submit" value="Add To Menu"/>
+                </div>
             </form>
         </div>
     </div>
@@ -63,4 +68,17 @@
             </table>
         </div>
     </div>
+    <div class = "card">
+        <div class="card-header text-white text-center bg-danger">Add Admin</div>
+        <div class="card-body body_ref">
+            <div class="offset-md-4">
+                <form action="/register" method="POST">
+                    <input class="addTo" name="username" type="text" placeholder="username"/>
+                    <input class="addTo" name="password" type="password" placeholder="password"/>
+                    <input class="submit_m" type="submit" value="Add"/>
+                </form>
+            </div>
+        </div>
+    </div>
+    
 </div>

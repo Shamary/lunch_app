@@ -20,7 +20,7 @@ h2{
 }
 
 .ticket{
-    margin-top: 80px;
+    margin-top: 10px;
     background-color: #ff7070;
     height: 400px;
     
@@ -85,4 +85,75 @@ table th{
 .del_button{
     color: white;
     cursor: pointer;
+}
+
+.logout{
+    margin-top: 100px;
+    background-color: #ce2121;
+    border:none;
+    padding: 5px;
+    color:white;
+    cursor:pointer;
+}
+
+.logout:hover{
+    background-color: #ff7070;
+    padding: 8px;
+}
+
+.login_row .next{
+    background-color: #ce4e4e;
+    border:none;
+    padding: 5px;
+    color:white;
+    cursor:pointer;
+    border-radius: 5px;
+    
+    width: 100px;
+}
+
+.login_row .next:hover{
+    background-color: #ff7070;
+}
+
+.login_row{
+    margin-top: 5%;
+}
+
+.login_row select{
+     border-radius: 5px;
+    /*width: 300px;*/
+    
+    /*border: 1px solid #9e0000;*/
+    color:white;
+    background-color: #ce4e4e;
+    
+    font-size: 18pt;
+}
+
+.addTo{
+    background-color: #ce4e4e;
+    color:white;
+    border:1px solid #ce2121;
+    outline-color: white;
+    
+}
+
+.addTo::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1; /* Firefox */
+}
+
+.submit_m{
+    background-color: #ce2121;
+    border:none;
+    padding: 8px;
+    color:white;
+    cursor:pointer;
+    
+    width: 140px;
+}
+
+.submit_m:hover{
+    background-color: #898989;
 }

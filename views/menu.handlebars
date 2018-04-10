@@ -2,9 +2,14 @@
     <div class="row">
         {{#if messages.failure}}
             <h4 class="bg-danger text-white flash w-100">{{messages.failure}}</h4>
+        {{else if messages.update}}
+            <h4 class="bg-success text-white flash w-100">{{messages.update}}</h4>
         {{else if messages.info}}
             <h4 class="bg-success text-white flash w-100">{{messages.info}}</h4>
         {{/if}}
+    </div>
+    <div class="row">
+        <button id="logout0" class="logout offset-md-6">logout</button>
     </div>
     <div class="offset-md-2 col-md-5 ticket">
         <h2 class="offset-md-4">Ticket</h2>
@@ -13,11 +18,11 @@
             <br>
             <div class="row offset-md-1">
                 <label class="col-md-3">Appetizer</label>
-                <select name ="appetizer" class="offset-md-1 col-md-6 select0">
+                <select id="sel1" name ="appetizer" class="offset-md-1 col-md-6 select0">
                     {{#if appetizer}}
                         <option value="{{appetizer}}">{{appetizer}}</option>
                     {{/if}}
-                    <option value="">None</option>
+                    <option value="None">None</option>
                     {{#each appetizerList}}
                         <option value="{{this}}">{{this}}</option>
                     {{/each}}
@@ -25,11 +30,11 @@
             </div>
             <div class="row offset-md-1">
                 <label class="col-md-3">Protein</label>
-                <select name="protein" class="offset-md-1 col-md-6 select0">
+                <select id="sel2" name="protein" class="offset-md-1 col-md-6 select0">
                     {{#if protein}}
                         <option value="{{protein}}">{{protein}}</option>
                     {{/if}}
-                    <option value="">None</option>
+                    <option value="None">None</option>
                     {{#each proteinList}}
                         <option value="{{this}}">{{this}}</option>
                     {{/each}}
@@ -37,11 +42,11 @@
             </div>
             <div class="row offset-md-1">
                 <label class="col-md-3">Carb</label>
-                <select name="carb" class="offset-md-1 col-md-6 select0">
+                <select id="sel3" name="carb" class="offset-md-1 col-md-6 select0">
                     {{#if carb}}
                         <option value="{{carb}}">{{carb}}</option>
                     {{/if}}
-                    <option value="">None</option>
+                    <option value="None">None</option>
                     {{#each carbsList}}
                         <option value="{{this}}">{{this}}</option>
                     {{/each}}
@@ -49,11 +54,11 @@
             </div>
             <div class="row offset-md-1">
                 <label class="col-md-3">Vegetable</label>
-                <select name="vegetable" class="offset-md-1 col-md-6 select0">
+                <select id="sel4" name="vegetable" class="offset-md-1 col-md-6 select0">
                     {{#if vegetable}}
                         <option value="{{vegetable}}">{{vegetable}}</option>
                     {{/if}}
-                    <option value="">None</option>
+                    <option value="None">None</option>
                     {{#each vegetableList}}
                         <option value="{{this}}">{{this}}</option>
                     {{/each}}
@@ -61,18 +66,18 @@
             </div>
             <div class="row offset-md-1">
                 <label class="col-md-3">Sides</label>
-                <select name="sides" class="offset-md-1 col-md-6 select0">
+                <select id="sel5" name="sides" class="offset-md-1 col-md-6 select0">
                     {{#if sides}}
                         <option value="{{sides}}">{{sides}}</option>
                     {{/if}}
-                    <option value="">None</option>
+                    <option value="None">None</option>
                     {{#each sidesList}}
                         <option value="{{this}}">{{this}}</option>
                     {{/each}}
                 </select>
             </div>
             <br><br>
-            <input type="submit" class="offset-md-9 order" value="Place Order"/>
+            <input type="submit" class="offset-md-8 order" value={{#if update}}"Update Order"{{else}} "Place Order" {{/if}}/>
         </form>
     </div>
 </div>

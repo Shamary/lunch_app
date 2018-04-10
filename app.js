@@ -10,8 +10,15 @@ var mongoose = require('mongoose');
 var handlebars= require('express-handlebars');
 var env=require("./config/environment.js");
 var flash = require("express-flash");
-var session= require("express-session");
+var session= require("cookie-session");
 var sanitizer= require("express-sanitizer");
+var bcrypt=require("bcrypt");
+var passport=require("passport-local");
+
+/*var salt=bcrypt.genSaltSync(10);
+var hash = bcrypt.hashSync("1234", salt);
+    
+console.log("hash= "+hash);$2b$10$8l6PIdGoli5YTtd0WtQ5Q.6kQwoP7ViCT6dNj7mjXJ5wwWFpWKFTu*/
 
 //var mongooseConnect = require('./config/mongoose')();
 
@@ -40,11 +47,12 @@ app.use(cookieParser());
 app.use(sanitizer());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
-  secret:'lunch is always nice',
-  resave:false,
-  saveUninitialized: true,
-  cookie: { secure: true }
-}));
+  name: 'session',
+  keys: ["lunch is always nice","nice lunch"],
+
+  // Cookie Options
+  maxAge: 24 * 60 * 60 * 1000 // 24 hours
+}))
 app.use(flash());
 
 

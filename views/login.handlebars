@@ -1,11 +1,17 @@
-<div>
+<div class="login_row offset-md-4">
     <form action="" method="POST">
+        <div class="row">
         <select name="user">
-            <option>None</option>
+            <!--<option>None</option>-->
             {{#each member}}
                 <option value="{{this}}">{{this}}</option>
             {{/each}}
         </select>
-        <input type="submit" value="Next" />
+        <input class="next" type="submit" value="Next" />
+        </div>
+        <br>
+        <div class="row">
+            
+        </div>
     </form>
 </div>

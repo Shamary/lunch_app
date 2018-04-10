@@ -39,13 +39,13 @@ $(document).ready(function(e){
                 }
             ]
         });
-    }
-    
+        
+        
      $('#menu_table').on('click',function(e)
         {
             if($(e.target).hasClass("del_button"))
             {
-                let row=menu.row(e.target.node).data();//$(e.target).siblings(":last").val();
+                let row=menu.row($(e.target).closest("tr")).data();//$(e.target).siblings(":last").val();
                 console.log("id ="+row.id);
                 
                 $.post("/admin/delete",row,function(data){
@@ -54,10 +54,12 @@ $(document).ready(function(e){
             }
             //console.log("clicked "+e.target);
         });
+    }
+    
         
         if($("#orders_table").length)
         {
-            var menu= $("#orders_table").DataTable({
+            var order= $("#orders_table").DataTable({
                 "ordering":false,
                 dom:"Bfrtip",
                 buttons:[{extend:"excelHtml5", text:"Save as Excel", className:"sp_buttons"}, {extend:"pdf", text:"Save as PDF", className:"sp_buttons"}],
@@ -75,6 +77,12 @@ $(document).ready(function(e){
                     {data:'vegetable'},
                     {data:'sides'},
                 ]
+            });
+            
+            $("#signout").on("click",function(){
+               $.post("/signout",function(){
+                   window.location.replace("/signin");
+               }); 
             });
         }
 });
