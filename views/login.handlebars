@@ -1,0 +1,11 @@
+<div>
+    <form action="" method="POST">
+        <select name="user">
+            <option>None</option>
+            {{#each member}}
+                <option value="{{this}}">{{this}}</option>
+            {{/each}}
+        </select>
+        <input type="submit" value="Next" />
+    </form>
+</div>

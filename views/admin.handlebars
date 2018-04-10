@@ -1,0 +1,66 @@
+<div>
+    <div class = "card">
+        <div class="card-header text-white text-center bg-danger">Add To Menu</div>
+        <div class="card-body body_ref">
+            <form action="/admin" method="POST">
+                <div>
+                    <div class="row">
+                        <input name="appetizer" type="text" placeholder="Appetizer" required/>
+                    </div>
+                    <div class="row">
+                        <input name="protein" type="text" placeholder="Protein" required/>
+                    </div>
+                    <div class="row">
+                        <input name="carb" type="text" placeholder="Carb" required/>
+                    </div>
+                    <div class="row">
+                        <input name="vegetable" type="text" placeholder="Vegetable" required/>
+                    </div>
+                    <div class="row">
+                        <input name="sides" type="text" placeholder="Sides" required/>
+                    </div>
+                </div>
+                <br>
+                <input type="submit" value="Add To Menu"/>
+            </form>
+        </div>
+    </div>
+    <div class = "card">
+        <div class="card-header text-white text-center bg-danger">Menu</div>
+        <div class="card-body body_ref">
+            <table id="menu_table" class="table table-bordered text-white bg-danger text-center" style="width:100%">
+                <thead>
+                    <th>id</th>
+                    <th>Appetizer</th>
+                    <th>Protein</th>
+                    <th>Carb</th>
+                    <th>Vegetable</th>
+                    <th>Sides</th>
+                    <th></th>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class = "card">
+        <div class="card-header text-white text-center bg-danger">Orders</div>
+        <div class="card-body body_ref">
+            <table id="orders_table" class="table table-bordered text-white bg-danger text-center" style="width:100%">
+                <thead class="text-white">
+                    <th>Name</th>
+                    <th>Branch</th>
+                    <th>Appetizer</th>
+                    <th>Protein</th>
+                    <th>Carb</th>
+                    <th>Vegetable</th>
+                    <th>Sides</th>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
