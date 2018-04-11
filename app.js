@@ -33,7 +33,13 @@ var routes = require('./routes/index');
 //models(user).removeUser();
 
 var app = express();
+app.use(session({
+  name: 'session',
+  keys: ["lunch is always nice","nice lunch"],
 
+  // Cookie Options
+  maxAge: 24 * 60 * 60 * 1000 // 24 hours
+}));
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'handlebars');
@@ -46,13 +52,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(sanitizer());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(session({
-  name: 'session',
-  keys: ["lunch is always nice","nice lunch"],
 
-  // Cookie Options
-  maxAge: 24 * 60 * 60 * 1000 // 24 hours
-}))
 app.use(flash());
 
 

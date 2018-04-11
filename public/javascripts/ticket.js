@@ -17,13 +17,23 @@ $(document).ready(function(e)
         removeCpy("#sel3 option");
         removeCpy("#sel4 optiion");
         removeCpy("#sel5 option");
+        
     }
     
 });
 
 function removeCpy(id)
 {
-    $(id).val(function(index,val){
+    /*$(id).val(function(index,val){
        $(this).siblings("[value ='"+val+"']").remove(); 
-    });
+    });*/
+    
+    var usedNames = {};
+$(id).each(function () {
+    if(usedNames[this.text]) {
+        $(this).remove();
+    } else {
+        usedNames[this.text] = this.value;
+    }
+});
 }

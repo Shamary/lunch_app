@@ -1,6 +1,6 @@
 exports.checkMenuAuth=function(req,res,next)
 {
-    if(!req.body.user)
+    if(!req.session.fUser)
     {
         res.redirect('/');
     }
@@ -12,7 +12,7 @@ exports.checkMenuAuth=function(req,res,next)
 
 exports.logout = function(req,res)
 {
-    req.body.user=null;
+    req.session.fUser=null;
     res.send("200 OK");
     //res.redirect('/');
 }
